@@ -11,7 +11,7 @@ export const ComponentPublicHealthSurveillanceService: React.FC = () => {
 
       <div className="card">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-          <ShieldCheck size={{32}} color="#2563eb" />
+          <ShieldCheck size={32} color="#2563eb" />
           <div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600 }}>Module: public_health_surveillance_service</h3>
             <span className="badge badge-success">Active Production Engine</span>

@@ -6,12 +6,12 @@ export const ComponentApprovalHierarchyEngineService: React.FC = () => {
     <div className="page-content">
       <div style={{ marginBottom: '2rem' }}>
         <h1 style={{ fontSize: '1.75rem', fontWeight: 700 }}>ApprovalHierarchyEngineService</h1>
-        <p style={{ color: '#64748b' }}>Multi-tiered officer approval pipeline (L1 -> L2 -> L3)</p>
+        <p style={{ color: '#64748b' }}>Multi-tiered officer approval pipeline (L1 &gt; L2 &gt; L3)</p>
       </div>
 
       <div className="card">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-          <ShieldCheck size={{32}} color="#2563eb" />
+          <ShieldCheck size={32} color="#2563eb" />
           <div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600 }}>Module: approval_hierarchy_engine_service</h3>
             <span className="badge badge-success">Active Production Engine</span>
@@ -32,7 +32,7 @@ export const ComponentApprovalHierarchyEngineService: React.FC = () => {
             </tr>
             <tr style={{ borderBottom: '1px solid #f1f5f9' }}>
               <td style={{ padding: '0.75rem', fontWeight: 500 }}>Description</td>
-              <td style={{ padding: '0.75rem' }}>Multi-tiered officer approval pipeline (L1 -> L2 -> L3)</td>
+              <td style={{ padding: '0.75rem' }}>Multi-tiered officer approval pipeline (L1 &gt; L2 &gt; L3)</td>
             </tr>
           </tbody>
         </table>
