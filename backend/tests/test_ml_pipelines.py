@@ -6,6 +6,8 @@ from app.ml.sla_predictor import sla_pipeline
 from app.ml.risk_scorer import risk_pipeline
 from app.ml.demand_forecaster import demand_pipeline
 from app.ml.workload_detector import workload_pipeline
+from app.ml.escalation_predictor import escalation_pipeline
+from app.ml.noshow_forecaster import noshow_pipeline
 
 def test_sla_predictor_inference():
     res = sla_pipeline.predict_processing_time(doc_count=3, age=35, workload=40, delay_days=2.0, priority=2)
@@ -29,3 +31,15 @@ def test_workload_detector_inference():
     assert "anomaly_score" in res
     assert "severity" in res
     assert res["severity"] in ["NORMAL", "WARNING", "CRITICAL"]
+
+def test_escalation_predictor_inference():
+    res = escalation_pipeline.predict_escalation(days_pending=12.5, priority=3, prev_escalations=2, dept_busy=True)
+    assert "escalation_probability" in res
+    assert "will_escalate" in res
+    assert isinstance(res["will_escalate"], bool)
+
+def test_noshow_forecaster_inference():
+    res = noshow_pipeline.predict_noshow(hour=10, day_of_week=2, past_noshows=1, reminder_sent=True)
+    assert "noshow_probability" in res
+    assert "risk" in res
+    assert res["risk"] in ["LOW", "HIGH"]
