@@ -23,7 +23,29 @@ from app.api.v1.permits_certificates import router as permits_certificates_route
 from app.api.v1.finance import router as finance_router
 from app.api.v1.ml import router as ml_router
 
+from app.api.v1.domain_welfare import router as domain_welfare_router
+from app.api.v1.domain_procurement import router as domain_procurement_router
+from app.api.v1.domain_property import router as domain_property_router
+from app.api.v1.domain_health import router as domain_health_router
+from app.api.v1.domain_education import router as domain_education_router
+from app.api.v1.domain_transport import router as domain_transport_router
+from app.api.v1.domain_disaster import router as domain_disaster_router
+from app.api.v1.domain_environment import router as domain_environment_router
+from app.api.v1.domain_labor import router as domain_labor_router
+from app.api.v1.domain_taxation import router as domain_taxation_router
+
 from app.db.database import engine, Base
+import app.models.domain_welfare
+import app.models.domain_procurement
+import app.models.domain_property
+import app.models.domain_health
+import app.models.domain_education
+import app.models.domain_transport
+import app.models.domain_disaster
+import app.models.domain_environment
+import app.models.domain_labor
+import app.models.domain_taxation
+
 
 # Import all models to ensure metadata registration
 import app.models.user
@@ -98,6 +120,17 @@ app.include_router(queues_appointments_router, prefix=settings.API_V1_STR)
 app.include_router(permits_certificates_router, prefix=settings.API_V1_STR)
 app.include_router(finance_router, prefix=settings.API_V1_STR)
 app.include_router(ml_router, prefix=settings.API_V1_STR)
+app.include_router(domain_welfare_router, prefix=settings.API_V1_STR)
+app.include_router(domain_procurement_router, prefix=settings.API_V1_STR)
+app.include_router(domain_property_router, prefix=settings.API_V1_STR)
+app.include_router(domain_health_router, prefix=settings.API_V1_STR)
+app.include_router(domain_education_router, prefix=settings.API_V1_STR)
+app.include_router(domain_transport_router, prefix=settings.API_V1_STR)
+app.include_router(domain_disaster_router, prefix=settings.API_V1_STR)
+app.include_router(domain_environment_router, prefix=settings.API_V1_STR)
+app.include_router(domain_labor_router, prefix=settings.API_V1_STR)
+app.include_router(domain_taxation_router, prefix=settings.API_V1_STR)
+
 
 @app.get("/")
 def root():
